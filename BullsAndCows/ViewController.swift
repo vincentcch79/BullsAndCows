@@ -70,19 +70,37 @@ class ViewController: UIViewController, UITableViewDataSource {
         }
         // TODO: 3. convert guessString to the data type you want to use and judge the guess
         
-        guessString.array
+        var guessArr = Array(guessString!.characters)
+        var ansArr = Array(answear.characters)
+        
+        var cows: Int = 0
+        var bulls: Int = 0
+        
+    
+        for r in 0...3{
+            if guessArr[r] == ansArr[r]{
+                cows += 1
+            }else{
+                for o in 0...3{
+                    if guessArr[r] == ansArr[o]{
+                    bulls += 1
+                    }
+                }
+                
+            }
+        }
         
         // TODO: 4. update the hint
         
-        
-        
-        
-        let hint = "1A2B"
+        var hint = "\(cows)A \(bulls)B"
         
         hintArray.append((guessString!, hint))
         
         // TODO: 5. update the constant "correct" if the guess is correct
-        let correct = false
+        var correct = false
+        if cows == 4{
+            correct = true
+        }
         if correct {
             let alert = UIAlertController(title: "Wow! You are awesome!", message: nil, preferredStyle: .Alert)
             alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))

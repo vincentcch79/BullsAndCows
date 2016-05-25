@@ -65,7 +65,19 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     
     @IBAction func guess(sender: AnyObject) {
+        
         let guessString = guessTextField.text
+        if Set(guessString!.characters).count < 4 {
+            let alert = UIAlertController(title: "you should not put duplicate numbers!", message: nil, preferredStyle: .Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+            return
+
+        
+        }
+        
+        
+        
         guard guessString?.characters.count == 4 else {
             let alert = UIAlertController(title: "you should input 4 digits to guess!", message: nil, preferredStyle: .Alert)
             alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
@@ -80,14 +92,6 @@ class ViewController: UIViewController, UITableViewDataSource {
         var cows: Int = 0
         var bulls: Int = 0
         
-        for k in 0...3{
-            if guessArr[k] == guessArr[k]{
-                let guessAlert = UIAlertController(title: "your answer have repeated numbers!", message: nil, preferredStyle: .Alert)
-                    guessAlert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-                    self.presentViewController(guessAlert, animated: true, completion: nil)
-                    return
-            }
-        }
         
     
         for r in 0...3{

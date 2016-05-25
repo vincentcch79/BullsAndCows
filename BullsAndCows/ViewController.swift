@@ -19,7 +19,11 @@ class ViewController: UIViewController, UITableViewDataSource {
             remainingTimeLabel.text = "remaining time: \(remainingTime)"
             if remainingTime == 0 {
                 guessButton.enabled = false
-            } else {
+            }else if remainingTime <= 3 {
+                remainingTimeLabel.textColor = UIColor.redColor()
+            }else if remainingTime <= 6 {
+                remainingTimeLabel.textColor = UIColor.yellowColor()
+            }else {
                 guessButton.enabled = true
             }
         }

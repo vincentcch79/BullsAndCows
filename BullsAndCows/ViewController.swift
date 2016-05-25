@@ -80,6 +80,15 @@ class ViewController: UIViewController, UITableViewDataSource {
         var cows: Int = 0
         var bulls: Int = 0
         
+        for k in 0...3{
+            if guessArr[k] == guessArr[k]{
+                let guessAlert = UIAlertController(title: "your answer have repeated numbers!", message: nil, preferredStyle: .Alert)
+                    guessAlert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+                    self.presentViewController(guessAlert, animated: true, completion: nil)
+                    return
+            }
+        }
+        
     
         for r in 0...3{
             if guessArr[r] == ansArr[r]{
@@ -113,6 +122,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         } else {
             remainingTime! -= 1
         }
+        guessTextField.text = ""
     }
     @IBAction func showAnswear(sender: AnyObject) {
         // TODO: 6. convert your answear to string(if it's necessary) and display it

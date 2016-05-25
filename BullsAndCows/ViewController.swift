@@ -136,6 +136,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     @IBAction func playAgain(sender: AnyObject) {
         setGame()
         answear.removeRange(answear.startIndex..<answear.startIndex.advancedBy(4))
+        remainingTimeLabel.textColor = UIColor.blackColor()
     }
     
     // MARK: TableView

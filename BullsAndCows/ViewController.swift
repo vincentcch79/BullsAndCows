@@ -49,7 +49,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     func generateAnswear() {
         var numArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
-        for _ in 0...3{
+        for _ in 0...3 {
             let n = Int(arc4random_uniform(UInt32(numArray.count)))
             answear = answear + (numArray.removeAtIndex(n))
         }
@@ -117,6 +117,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     @IBAction func playAgain(sender: AnyObject) {
         setGame()
+        answear.removeRange(answear.startIndex..<answear.startIndex.advancedBy(4))
     }
     
     // MARK: TableView
@@ -136,3 +137,11 @@ class ViewController: UIViewController, UITableViewDataSource {
     }
 }
 
+/*
+ 
+ var message = "asdf"
+ 
+ String(message[message.startIndex.advancedBy(0)])  -> "a" :String
+ message[message.startIndex.advancedBy(1)]  -> "s" :Character
+ 
+ */

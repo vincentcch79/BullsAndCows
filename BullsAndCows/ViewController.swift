@@ -52,6 +52,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     }
     
     func generateAnswear() {
+        
         var numArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
         for _ in 0...3 {
             let n = Int(arc4random_uniform(UInt32(numArray.count)))
@@ -91,7 +92,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         var bulls: Int = 0
         
         
-    
+        
         for r in 0...3{
             if guessArr[r] == ansArr[r]{
                 cows += 1

@@ -67,16 +67,6 @@ class ViewController: UIViewController, UITableViewDataSource {
     @IBAction func guess(sender: AnyObject) {
         
         let guessString = guessTextField.text
-        if Set(guessString!.characters).count < 4 {
-            let alert = UIAlertController(title: "you should not put duplicate numbers!", message: nil, preferredStyle: .Alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-            self.presentViewController(alert, animated: true, completion: nil)
-            return
-
-        
-        }
-        
-        
         
         guard guessString?.characters.count == 4 else {
             let alert = UIAlertController(title: "you should input 4 digits to guess!", message: nil, preferredStyle: .Alert)
@@ -84,6 +74,14 @@ class ViewController: UIViewController, UITableViewDataSource {
             self.presentViewController(alert, animated: true, completion: nil)
             return
         }
+        
+        if Set(guessString!.characters).count < 4 {
+            let alert = UIAlertController(title: "you should not put duplicate numbers!", message: nil, preferredStyle: .Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+            return
+        }
+
         // TODO: 3. convert guessString to the data type you want to use and judge the guess
         
         var guessArr = Array(guessString!.characters)

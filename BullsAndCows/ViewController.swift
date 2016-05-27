@@ -108,7 +108,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         
         // TODO: 4. update the hint
         
-        var hint = "\(cows)A \(bulls)B"
+        let hint = "\(cows)A \(bulls)B"
         
         hintArray.append((guessString!, hint))
         

@@ -7,10 +7,10 @@
 //
 
 
-        protocol GenerateAns{
+protocol GenerateAns{
        
-        var answear: String  {get set}
-        func generateAnswear()
-        func setGame()
+    var answear: String  {get set}
+    func generateAnswear()
+    func setGame()
 
-    }
+}

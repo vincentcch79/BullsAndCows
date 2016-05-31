@@ -1,14 +1,14 @@
 //
-//  ViewController.swift
+//  BackupViewController.swift
 //  BullsAndCows
 //
-//  Created by 張智涵 on 2016/5/30.
-//  Copyright © 2016年 Brian. All rights reserved.
+//  Created by Brian Hu on 5/19/16.
+//  Copyright © 2016 Brian. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource {
+class BackupViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var guessTextField: UITextField!
     @IBOutlet weak var guessButton: UIButton!
     @IBOutlet weak var remainingTimeLabel: UILabel!
@@ -44,7 +44,6 @@ class ViewController: UIViewController, UITableViewDataSource {
     }
     
     func setGame() {
-        GameLogic.generateAnswear()
         generateAnswear()
         remainingTime = 9
         hintArray.removeAll()
@@ -52,13 +51,15 @@ class ViewController: UIViewController, UITableViewDataSource {
         guessTextField.text = nil
     }
     
-    
-    
-    func generateAnswear(){
-        answear = GameLogic.generateAnswear()
-        answear.removeRange(answear.startIndex..<answear.startIndex.advancedBy(4))
+    func generateAnswear() {
+        
+        var numArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+        for _ in 0...3 {
+            let n = Int(arc4random_uniform(UInt32(numArray.count)))
+            answear = answear + (numArray.removeAtIndex(n))
+        }
+        
     }
-    
     // TODO: 2. generate your answear here
     // You need to generate 4 random and non-repeating digits.
     // Some hints: http://stackoverflow.com/q/24007129/938380
@@ -66,7 +67,6 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     @IBAction func guess(sender: AnyObject) {
         
-    
         let guessString = guessTextField.text
         
         guard guessString?.characters.count == 4 else {
@@ -85,14 +85,31 @@ class ViewController: UIViewController, UITableViewDataSource {
         
         // TODO: 3. convert guessString to the data type you want to use and judge the guess
         
-    
+        var guessArr = Array(guessString!.characters)
+        var ansArr = Array(answear.characters)
         
-        let(cows, bulls) = GameLogic.guessCompare(guessString!, answear: answear)
+        var cows: Int = 0
+        var bulls: Int = 0
         
+        
+        
+        for r in 0...3{
+            if guessArr[r] == ansArr[r]{
+                cows += 1
+            }else{
+                for o in 0...3{
+                    if guessArr[r] == ansArr[o]{
+                        bulls += 1
+                    }
+                }
+                
+            }
+        }
         
         // TODO: 4. update the hint
         
         let hint = "\(cows)A \(bulls)B"
+        
         hintArray.append((guessString!, hint))
         
         // TODO: 5. update the constant "correct" if the guess is correct
@@ -113,7 +130,6 @@ class ViewController: UIViewController, UITableViewDataSource {
     @IBAction func showAnswear(sender: AnyObject) {
         // TODO: 6. convert your answear to string(if it's necessary) and display it
         answearLabel.text = "\(answear)"
-        
     }
     
     @IBAction func playAgain(sender: AnyObject) {
@@ -147,5 +163,3 @@ class ViewController: UIViewController, UITableViewDataSource {
  message[message.startIndex.advancedBy(1)]  -> "s" :Character
  
  */
-
-

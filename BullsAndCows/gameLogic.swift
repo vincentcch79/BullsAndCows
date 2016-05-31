@@ -9,12 +9,11 @@
 import UIKit
 class GameLogic: NSObject {
     
-    static var answear: String = ""
 
     
     
     class func generateAnswear() -> String{
-       
+        var answear = ""
         var numArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
         for _ in 0...3 {
             let n = Int(arc4random_uniform(UInt32(numArray.count)))

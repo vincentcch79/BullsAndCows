@@ -44,8 +44,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     }
     
     func setGame() {
-        GameLogic.generateAnswear()
-        generateAnswear()
+        answear = GameLogic.generateAnswear()
         remainingTime = 9
         hintArray.removeAll()
         answearLabel.text = nil
@@ -54,10 +53,11 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     
     
-    func generateAnswear(){
-        answear = GameLogic.generateAnswear()
-        answear.removeRange(answear.startIndex..<answear.startIndex.advancedBy(4))
-    }
+//    func generateAnswear() -> String{
+//        answear = GameLogic.generateAnswear()
+//        answear.removeRange(answear.startIndex..<answear.startIndex.advancedBy(4))
+//        return answear
+//    }
     
     // TODO: 2. generate your answear here
     // You need to generate 4 random and non-repeating digits.
@@ -112,13 +112,12 @@ class ViewController: UIViewController, UITableViewDataSource {
     }
     @IBAction func showAnswear(sender: AnyObject) {
         // TODO: 6. convert your answear to string(if it's necessary) and display it
-        answearLabel.text = "\(answear)"
+        answearLabel.text = answear
         
     }
     
     @IBAction func playAgain(sender: AnyObject) {
         setGame()
-        answear.removeRange(answear.startIndex..<answear.startIndex.advancedBy(4))
         remainingTimeLabel.textColor = UIColor.blackColor()
     }
     

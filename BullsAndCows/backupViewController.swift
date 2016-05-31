@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BackupViewController: UIViewController, UITableViewDataSource {
+class BackupViewController: UIViewController, UITableViewDataSource, GenerateAns {
     @IBOutlet weak var guessTextField: UITextField!
     @IBOutlet weak var guessButton: UIButton!
     @IBOutlet weak var remainingTimeLabel: UILabel!

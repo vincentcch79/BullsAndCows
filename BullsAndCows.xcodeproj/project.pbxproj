@@ -10,6 +10,7 @@
 		9FF2363E1CFBFA950007935A /* gameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF2363D1CFBFA950007935A /* gameLogic.swift */; };
 		9FF236401CFC283D0007935A /* RefactorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF2363F1CFC283D0007935A /* RefactorViewController.swift */; };
 		9FF236441CFD21BF0007935A /* BackupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF236431CFD21BF0007935A /* BackupViewController.swift */; };
+		9FF236461CFD6CD50007935A /* GameLogicProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF236451CFD6CD50007935A /* GameLogicProtocol.swift */; };
 		D355A4F81CEDF6B40091EC95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D355A4F71CEDF6B40091EC95 /* AppDelegate.swift */; };
 		D355A4FF1CEDF6B40091EC95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D355A4FE1CEDF6B40091EC95 /* Assets.xcassets */; };
 		D355A5021CEDF6B40091EC95 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D355A5001CEDF6B40091EC95 /* LaunchScreen.storyboard */; };
@@ -21,6 +22,7 @@
 		9FF2363D1CFBFA950007935A /* gameLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gameLogic.swift; sourceTree = "<group>"; };
 		9FF2363F1CFC283D0007935A /* RefactorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefactorViewController.swift; sourceTree = "<group>"; };
 		9FF236431CFD21BF0007935A /* BackupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackupViewController.swift; sourceTree = "<group>"; };
+		9FF236451CFD6CD50007935A /* GameLogicProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameLogicProtocol.swift; sourceTree = "<group>"; };
 		D355A4F41CEDF6B40091EC95 /* BullsAndCows.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BullsAndCows.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D355A4F71CEDF6B40091EC95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D355A4FE1CEDF6B40091EC95 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				9FF2363D1CFBFA950007935A /* gameLogic.swift */,
 				9FF2363F1CFC283D0007935A /* RefactorViewController.swift */,
 				9FF236431CFD21BF0007935A /* BackupViewController.swift */,
+				9FF236451CFD6CD50007935A /* GameLogicProtocol.swift */,
 			);
 			path = BullsAndCows;
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 				9FF236441CFD21BF0007935A /* BackupViewController.swift in Sources */,
 				9FF2363E1CFBFA950007935A /* gameLogic.swift in Sources */,
 				D355A50C1CEDF6EB0091EC95 /* ViewController.swift in Sources */,
+				9FF236461CFD6CD50007935A /* GameLogicProtocol.swift in Sources */,
 				D355A4F81CEDF6B40091EC95 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -150,7 +150,7 @@ class ViewController: UIViewController, UITableViewDataSource, GenerateAns {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Hint Cell", forIndexPath: indexPath)
-        let (guess, hint) = hintArray[hintArray.count - indexPath.row - 1]
+        let (guess, hint) = hintArray[hintArray.count - 1 - indexPath.row]
         
         cell.textLabel?.text = "\(guess) => \(hint)"
         return cell

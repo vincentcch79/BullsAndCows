@@ -147,6 +147,8 @@ class BackupViewController: UIViewController, UITableViewDataSource, GenerateAns
         return hintArray.count
     }
     
+    
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Hint Cell", forIndexPath: indexPath)
         let (guess, hint) = hintArray[indexPath.row]
